@@ -3,7 +3,7 @@
 import ServerlessComponent from 'serverless-component'
 import { parseTemplate, importNodeWithData, update as updateNode } from 'griffin'
 
-class UpVoteELement extends ServerlessComponent {
+export default class UpVoteElement extends ServerlessComponent {
   constructor() {
     super({
       git: 'https://github.com/rkusa/upvote-button-fns.git',
@@ -19,7 +19,7 @@ class UpVoteELement extends ServerlessComponent {
     const res = await fetch(this.url)
     this.state = await res.json()
 
-    const node = importNodeWithData(UpVoteELement.template.content, [this.state], this)
+const node = importNodeWithData(UpVoteElement.template.content, [this.state], this)
     const shadowRoot = this.shadowRoot || this.attachShadow({ mode: 'open' })
     shadowRoot.appendChild(node)
   }
@@ -43,7 +43,7 @@ class UpVoteELement extends ServerlessComponent {
   }
 }
 
-UpVoteELement.template = ServerlessComponent.tmpl`
+UpVoteElement.template = ServerlessComponent.tmpl`
   <style>
     :host {
       font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -71,6 +71,6 @@ UpVoteELement.template = ServerlessComponent.tmpl`
 `
 
 // console.log('IMPORTED', parseTemplate)
-parseTemplate(UpVoteELement.template)
+parseTemplate(UpVoteElement.template)
 
-customElements.define('up-vote', UpVoteELement)
+customElements.define('upvote-button', UpVoteElement)

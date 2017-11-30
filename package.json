@@ -8,5 +8,12 @@
   "dependencies": {
     "griffin": "github:rkusa/griffin",
     "serverless-component": "github:rkusa/serverless-component"
+  },
+  "devDependencies": {
+    "rollup": "^0.52.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "scripts": {
+    "bundle": "rollup -c dist/rollup.config.js"
   }
 }
