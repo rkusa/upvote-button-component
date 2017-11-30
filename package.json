@@ -1,0 +1,12 @@
+{
+  "name": "upvote-button-component",
+  "version": "0.1.0",
+  "description": "",
+  "main": "upvote-button.js",
+  "author": "Markus Ast <m@rkusa.st>",
+  "license": "MIT",
+  "dependencies": {
+    "griffin": "github:rkusa/griffin",
+    "serverless-component": "github:rkusa/serverless-component"
+  }
+}
